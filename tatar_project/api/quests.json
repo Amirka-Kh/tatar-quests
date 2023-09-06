@@ -1,102 +1,42 @@
 [
     {
-        "name": "Bridge",
-        "description": "Where the beginning of bridge to civilization takes place",
-        "question": "What resource is mined?",
-        "answer": "Crystal",
+        "name": "Алтын Шар",
+        "description": "Бу эзләнүдә сез борыңгы экспонат булган югалган алтын шарны эзләргә барырсыз. Шар урманда югалган, һәм сез аның кайда булуын төрле табышмаклар һәм серләр чишеп табарга тиеш",
+        "question": "Бу Алтын шар белән бәйле борынгы пәйгамбәрлек нинди?",
+        "answer": "алтын шарны алган кеше мәңгелек зирәклек алачак.",
         "latitude": 55.745866,
         "longitude": 48.743380,
-        "imagePath": "assets/quest/Bridge.jpg",
+        "imagePath": "assets/quest/Sphere.jpg",
         "colors": ["lightGreen", "green"]
     },
     {
-        "name": "Light",
-        "description": "Entrance to other side of city",
-        "question": "What lights up over nine Zions",
-        "answer": "Star",
+        "name": "Ташландык замокның сере",
+        "description": "Сезне мистик риваятьләр йөргән ташландык замокка сәяхәт көтә. Сезгә аның серле бүлмәләрен тикшерергә һәм бу урынның үткәне белән бәйле табышмакка җавап табарга кирәк.",
+        "question": "Бу замокның ташландык хәленә нинди вакыйга китергән?",
+        "answer": "Замок үзенең соңгы хуҗасының серле югалуынан соң ташландык хәлдә калган.",
         "latitude": 55.746609,
         "longitude": 48.751860,
-        "imagePath": "assets/quest/Light.jpg",
+        "imagePath": "assets/quest/Castle.jpg",
         "colors": ["lightGreen", "green"]
     },
     {
-        "name": "Inscription",
-        "description": "Building with threatening inscription",
-        "question": "What is the only other inscription in English",
-        "answer": "Foodcourt",
+        "name": "Пиратлар хәзинәсе",
+        "description": "Бу квест сезне утрауга җибәрәчәк, анда, риваятьләр буенча, пиратлар үз хәзинәләрен яшергәннәр. Карта табыгыз һәм пиратлар калдырган эшләрне чишеп хәзинәләр казыгыз.",
+        "question": "Хәзинә урынын күрсәтүче картада нинди ачкыч сүз бар?",
+        "answer": "Крокодил",
         "latitude": 55.751866,
         "longitude": 48.749052,
-        "imagePath": "assets/quest/Inscription.jpg",
+        "imagePath": "assets/quest/Pirate.jpg",
         "colors": ["lightGreen", "green"]
     },
     {
-        "name": "Emoji",
-        "description": "A delivery service between two other delivery services",
-        "question": "What is the number of building, which Santa like?",
-        "answer": "132",
+        "name": "серле Маяк",
+        "description": "Серле маяк искиткеч күренешләр булган урын булып санала. Сез аны тикшерергә һәм нәрсә булганын белү өчен табышмакларны чишәргә тиеш",
+        "question": "Бу Маяк белән нинди гадәти булмаган күренеш бәйле?",
+        "answer": "Маяк төнлә беркем дә аңлата алмаган сәер символлар барлыкка китерүче яктылык сибә.",
         "latitude": 55.749896,
         "longitude": 48.747186,
-        "imagePath": "assets/quest/Emoji.jpg",
-        "colors": ["lightGreen", "green"]
-    },
-    {
-        "name": "Plate",
-        "description": "Near the golden plate",
-        "question": "What is the color of pipes?",
-        "answer": "Yellow",
-        "latitude": 55.744923,
-        "longitude": 48.747165,
-        "imagePath": "assets/quest/Plate.jpg",
-        "colors": ["lightGreen", "green"]
-    },
-    {
-        "name": "Programming",
-        "description": "Where we study Java first time",
-        "question": "What is the number of building?",
-        "answer": "140",
-        "latitude": 55.750803,
-        "longitude": 48.743755,
-        "imagePath": "assets/quest/Programming.jpg",
-        "colors": ["lightGreen", "green"]
-    },
-    {
-        "name": "Products",
-        "description": "A square with big products",
-        "question": "What is the number of products?",
-        "answer": "6",
-        "latitude": 55.752826,
-        "longitude": 48.740995,
-        "imagePath": "assets/quest/Products.jpg",
-        "colors": ["lightGreen", "green"]
-    },
-    {
-        "name": "Suffer",
-        "description": "Where student suffers, after he suffered enough during semester",
-        "question": "What sport is ultra-right?",
-        "answer": "Tennis",
-        "latitude": 55.749183,
-        "longitude": 48.740558,
-        "imagePath": "assets/quest/Suffer.jpg",
-        "colors": ["lightGreen", "green"]
-    },
-    {
-        "name": "Robotics Lab",
-        "description": "the newest invention \"native robot\" was lost in the laboratories of labor technology. The new invention has intellect and senses, it is not large and can move independently. Engineers report that shortly before lunch, a quarrel broke out between the two scientists, which could have prompted the robot to escape. Ask scientists and find a robot",
-        "question": "Are you a cool guy?",
-        "answer": "Yes",
-        "latitude": 55.752826,
-        "longitude": 48.740995,
-        "imagePath": "assets/quest/robot.png",
-        "colors": ["lightGreen", "green"]
-    },
-    {
-        "name": "Machine Rise",
-        "description": "At Innopolis University, we are registering more and more cases of equipment failure. The professors are worried that this might be the work of an evil ai. Investigate this case and find out if the machines really started the uprising.",
-        "question": "Are you a cool guy?",
-        "answer": "Yes",
-        "latitude": 55.752826,
-        "longitude": 48.740995,
-        "imagePath": "assets/quest/calculator.png",
+        "imagePath": "assets/quest/Mayak.jpg",
         "colors": ["lightGreen", "green"]
     }
 ]
