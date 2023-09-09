@@ -79,14 +79,14 @@ class _MainPage extends ConsumerState<MainPage> {
                       style: appTheme.display1(),
                       children: [
                         TextSpan(
-                          text: context.locale.innopolisSecrets1,
+                          text: 'Tatar',
                           style: appTheme.display1().copyWith(
                                 color: Colors.white,
                               ),
                         ),
                         const TextSpan(text: "\n"),
                         TextSpan(
-                          text: context.locale.innopolisSecrets2,
+                          text: 'Quest',
                           style: appTheme.display2().copyWith(
                                 color: Colors.white,
                               ),

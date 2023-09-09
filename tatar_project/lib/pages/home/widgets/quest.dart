@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:quest_peak/domain/providers/style_provider.dart';
 import 'package:quest_peak/domain/models/quest_model.dart';
+import 'package:quest_peak/pages/home/widgets/place_page.dart';
 import 'package:quest_peak/pages/home/widgets/quest_details.dart';
 import 'package:quest_peak/pages/home/widgets/to_favorite_button.dart';
 import 'package:quest_peak/pages/home/widgets/is_solved.dart';
@@ -36,7 +37,8 @@ class QuestWidget extends ConsumerWidget {
             PageRouteBuilder(
               transitionDuration: const Duration(milliseconds: 400),
               pageBuilder: (context, _, __) {
-                return QuestDetailsWidget(quest: quest);
+                // return QuestDetailsWidget(quest: quest);
+                return PlacePage(quest: quest);
               },
             ),
           );
