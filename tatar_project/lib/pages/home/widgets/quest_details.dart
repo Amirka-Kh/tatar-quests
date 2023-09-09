@@ -26,12 +26,16 @@ class _QuestDetailsWidgetState extends ConsumerState<QuestDetailsWidget> {
   @override
   void initState() {
     super.initState();
-    timer = Timer.periodic(const Duration(seconds: 1), (Timer t) {
-      setState(() async {
-        QuestGeolocator.getPosition().then((position) {
-          latitude = position.latitude;
-          longitude = position.longitude;
-        });
+    _startLocationListening();
+  }
+
+  Future<void> _startLocationListening() async {
+    await QuestGeolocator.requestAccessPermission();
+    timer = Timer.periodic(const Duration(seconds: 1), (Timer t) async {
+      final position = await QuestGeolocator.getPosition();
+      setState(() {
+        latitude = position.latitude;
+        longitude = position.longitude;
       });
     });
   }
