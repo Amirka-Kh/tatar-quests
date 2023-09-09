@@ -2,17 +2,9 @@ import 'package:geolocator/geolocator.dart';
 
 class QuestGeolocator {
   static const double acceptanceDistance = 100;
-
-  static Future<Position> getPosition() async {
-    bool serviceEnabled = false;
-    LocationPermission permission;
-
-    serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!serviceEnabled) {
-      return Future.error('Location services are disabled');
-    }
-
-    permission = await Geolocator.checkPermission();
+  
+  static Future<void> requestAccessPermission() async {
+    LocationPermission permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
@@ -24,6 +16,18 @@ class QuestGeolocator {
       return Future.error(
           'Location permissions are permanently denied, we cannot request permissions.');
     }
+}
+
+  static Future<Position> getPosition() async {
+    bool serviceEnabled = false;
+
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      return Future.error('Location services are disabled');
+    }
+
+    // permission should be granted
+    // await requestAccessPermission();
 
     return await Geolocator.getCurrentPosition();
   }
