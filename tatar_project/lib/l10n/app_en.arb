@@ -40,5 +40,7 @@
     "stringIsNotFloat": "String is not floating point number",
     "submitQuest": "Submit quest",
     "anErrorHasOccured": "An error has occured",
-    "theDeveloperNotified": "The developer will be notified, when application will be restarted"
+    "theDeveloperNotified": "The developer will be notified, when application will be restarted",
+    "home": "Home",
+    "map": "Map"
 }

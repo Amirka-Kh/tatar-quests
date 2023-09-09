@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:quest_peak/domain/providers/settings_provider.dart';
-import 'package:quest_peak/domain/providers/style_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:quest_peak/config/app_locale_extension.dart';
 import 'package:quest_peak/domain/fetchers/quest_fetcher.dart';
 import 'package:quest_peak/domain/models/quest_model.dart';
+import 'package:quest_peak/domain/models/settings_model.dart';
+import 'package:quest_peak/domain/providers/settings_provider.dart';
+import 'package:quest_peak/domain/providers/style_provider.dart';
 import 'package:quest_peak/domain/trackers/quest_saved_tracker.dart';
 import 'package:quest_peak/domain/trackers/quest_solved_tracker.dart';
-import 'package:quest_peak/domain/models/settings_model.dart';
 import 'package:quest_peak/pages/add_quest/add_quest.dart';
 import 'package:quest_peak/pages/home/widgets/quest.dart';
 import 'package:quest_peak/pages/home/widgets/quest_details.dart';
 import 'package:quest_peak/pages/settings/settings.dart';
 
+@Deprecated('Use Home2Page instead')
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
 
@@ -112,22 +115,22 @@ class _HomePage extends ConsumerState<HomePage> {
                       Expanded(
                           child: (snapshot.hasData)
                               ? (PageView(
-                                  controller: _pageController,
-                                  physics: const ClampingScrollPhysics(),
-                                  children: buildList(snapshot.data!),
-                                ))
+                            controller: _pageController,
+                            physics: const ClampingScrollPhysics(),
+                            children: buildList(snapshot.data!),
+                          ))
                               : (snapshot.hasError)
-                                  ? Text(
-                                      AppLocalizations.of(context)!
-                                          .connectionError,
-                                      style: appTheme.display2(),
-                                    )
-                                  : const Center(
-                                      child: SizedBox(
-                                      width: 32,
-                                      height: 32,
-                                      child: CircularProgressIndicator(),
-                                    )))
+                              ? Text(
+                            AppLocalizations.of(context)!
+                                .connectionError,
+                            style: appTheme.display2(),
+                          )
+                              : const Center(
+                              child: SizedBox(
+                                width: 32,
+                                height: 32,
+                                child: CircularProgressIndicator(),
+                              )))
                     ],
                   );
                 })),
@@ -147,52 +150,52 @@ class _HomePage extends ConsumerState<HomePage> {
       MaterialPageRoute<void>(
         builder: (context) {
           return Scaffold(
-              appBar: AppBar(
-                title: Text(AppLocalizations.of(context)!.savedSuggestions),
-              ),
-              body: FutureBuilder<List<Quest>>(
-                  future: QuestSavedTracker.getQuests(),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      final tiles = snapshot.data!.map(
+            appBar: AppBar(
+              title: Text(AppLocalizations.of(context)!.savedSuggestions),
+            ),
+            body: FutureBuilder<List<Quest>>(
+              future: QuestSavedTracker.getQuests(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  final tiles = snapshot.data!.map(
                         (quest) {
-                          return ListTile(
-                            title: Text(
-                              quest.name,
-                              style: appTheme.display2(),
+                      return ListTile(
+                        title: Text(
+                          quest.name,
+                          style: appTheme.display2(),
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                              transitionDuration: const Duration(milliseconds: 400),
+                              pageBuilder: (context, _, __) {
+                                return QuestDetailsWidget(quest: quest);
+                              },
                             ),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                PageRouteBuilder(
-                                  transitionDuration:
-                                      const Duration(milliseconds: 400),
-                                  pageBuilder: (context, _, __) {
-                                    return QuestDetailsWidget(quest: quest);
-                                  },
-                                ),
-                              );
-                            },
                           );
                         },
                       );
-                      final divided = tiles.isNotEmpty
-                          ? ListTile.divideTiles(
-                              context: context,
-                              tiles: tiles,
-                            ).toList()
-                          : <Widget>[];
+                    },
+                  );
+                  final divided = tiles.isNotEmpty
+                      ? ListTile.divideTiles(
+                    context: context,
+                    tiles: tiles,
+                  ).toList()
+                      : <Widget>[];
 
-                      return ListView(children: divided);
-                    } else {
-                      return const Center(
-                          child: SizedBox(
-                        width: 32,
-                        height: 32,
-                        child: CircularProgressIndicator(),
-                      ));
-                    }
-                  }));
+                  return ListView(children: divided);
+                } else {
+                  return const Center(
+                    child: SizedBox(
+                      width: 32,
+                      height: 32,
+                      child: CircularProgressIndicator(),
+                    ),
+                  );
+                }
+              },),);
         },
       ),
     );
