@@ -95,7 +95,7 @@ class _HomePage extends ConsumerState<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Padding(
-                          padding: const EdgeInsets.only(left: 32.0, top: 8.0),
+                          padding: const EdgeInsets.only(left: 32.0, top: 30.0),
                           child: RichText(
                             text: TextSpan(children: [
                               TextSpan(

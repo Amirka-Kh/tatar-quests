@@ -58,45 +58,26 @@ class QuestWidget extends ConsumerWidget {
                       borderRadius: BorderRadius.circular(30.0),
                       child: Hero(
                         tag: "background-${quest.name}",
-                        child: Container(
-                          height: 0.6 * screenHeight,
-                          width: 0.9 * screenWidth,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: toListColor(quest.colors),
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: const Alignment(0, 0.2),
-                    child: Hero(
-                      tag: "image-${quest.name}",
-                      child: ClipOval(
                         child: Image.asset(
                           quest.imagePath,
-                          height: screenHeight * 0.35 * value,
-                          width: screenWidth * 0.7,
+                          height: screenHeight * 0.5 * value,
+                          width: screenWidth * 0.75 * value,
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
                   ),
                   Align(
-                    alignment: const Alignment(0.8, 0.7),
+                    alignment: const Alignment(0.65, 0.7),
                     child: IsSolvedWidget(quest: quest),
                   ),
                   Align(
-                    alignment: const Alignment(0.8, 0.95),
+                    alignment: const Alignment(0.65, 0.95),
                     child: SaveToFavouritesWidget(quest: quest),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsets.only(left: 48, right: 16, bottom: 16),
+                        const EdgeInsets.only(left: 58, right: 36, bottom: 16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -105,12 +86,12 @@ class QuestWidget extends ConsumerWidget {
                           color: Colors.transparent,
                           child: Text(
                             quest.name,
-                            style: appTheme.heading(),
+                            style: appTheme.headingWhite(),
                           ),
                         ),
                         Text(
                           AppLocalizations.of(context)!.learnMore,
-                          style: appTheme.subHeading(),
+                          style: appTheme.subHeadingWhite(),
                         ),
                       ],
                     ),
