@@ -50,6 +50,9 @@ class MyApp extends ConsumerWidget {
       title: 'Wnder',
       theme: ThemeData(
           brightness: Brightness.light,
+          // backgroundColor: const Color(0xFF54795C),
+          scaffoldBackgroundColor: const Color(0xFF54795C),
+          colorScheme: const ColorScheme.light(background: Color(0xFF54795C),),
           appBarTheme: const AppBarTheme(
               backgroundColor: Colors.white, foregroundColor: Colors.black)),
       darkTheme: ThemeData(brightness: Brightness.dark),

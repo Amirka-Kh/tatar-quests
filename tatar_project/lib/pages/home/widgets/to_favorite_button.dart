@@ -25,8 +25,8 @@ class _SaveToFavouritesWidgetState
             bool isSaved = snapshot.data!;
             return GestureDetector(
                 child: Container(
-                    width: 50.0,
-                    height: 50.0,
+                    width: 45.0,
+                    height: 45.0,
                     decoration: const BoxDecoration(
                       color: Color.fromARGB(180, 255, 255, 255),
                       shape: BoxShape.circle,

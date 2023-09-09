@@ -73,17 +73,24 @@ class _MainPage extends ConsumerState<MainPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(left: 32.0, top: 8.0),
+                  padding: const EdgeInsets.only(left: 32.0, top: 30.0),
                   child: RichText(
                     text: TextSpan(
+                      style: appTheme.display1(),
                       children: [
                         TextSpan(
-                            text: context.locale.innopolisSecrets1,
-                            style: appTheme.display1()),
+                          text: context.locale.innopolisSecrets1,
+                          style: appTheme.display1().copyWith(
+                                color: Colors.white,
+                              ),
+                        ),
                         const TextSpan(text: "\n"),
                         TextSpan(
-                            text: context.locale.innopolisSecrets2,
-                            style: appTheme.display2()),
+                          text: context.locale.innopolisSecrets2,
+                          style: appTheme.display2().copyWith(
+                                color: Colors.white,
+                              ),
+                        ),
                       ],
                     ),
                   ),
