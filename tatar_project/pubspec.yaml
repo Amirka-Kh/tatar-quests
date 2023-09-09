@@ -26,6 +26,7 @@ dependencies:
   firebase_core: ^2.4.0
   firebase_crashlytics: ^3.0.7
   firebase_database: ^10.0.7
+  flutter_svg: ^2.0.7
 
 dev_dependencies:
   flutter_test:
@@ -45,11 +46,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/quest/Sphere.jpg
-    - assets/quest/Castle.jpg
-    - assets/quest/Pirate.jpg
-    - assets/quest/Mayak.jpeg
-    - assets/icon/icon.png
+    - assets/quest/
+    - assets/icon/
   #   - assets/quest/Inscription.jpg
   #   - assets/quest/Light.jpg
   #   - assets/quest/Plate.jpg

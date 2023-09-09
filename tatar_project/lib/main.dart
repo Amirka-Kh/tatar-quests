@@ -11,7 +11,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:quest_peak/domain/models/settings_model.dart';
 import 'package:quest_peak/domain/trackers/settings_tracker.dart';
-import './pages/home/home.dart';
+import 'package:quest_peak/pages/home/home2.dart';
 import './domain/models/quest_model.dart';
 import 'config/custom_error.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -66,13 +66,13 @@ class MyApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate
       ],
-      locale: const Locale('ru', 'KZ'),
+      locale: const Locale('ru', ''),
       supportedLocales: const [
         Locale('en', ''),
         Locale('ru', ''),
         Locale('ru', 'KZ')
       ],
-      home: const HomePage(),
+      home: const Home2Page(),
     );
   }
 }

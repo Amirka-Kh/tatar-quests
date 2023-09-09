@@ -40,5 +40,7 @@
     "stringIsNotFloat": "сызык сан түгел",
     "submitQuest": "сорау җибәрү",
     "anErrorHasOccured": "хата булган",
-    "theDeveloperNotified": "эшләүче хәбәр ителгән"
+    "theDeveloperNotified": "эшләүче хәбәр ителгән",
+    "home": "Төп",
+    "map": "Карта"
 }
