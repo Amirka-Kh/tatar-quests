@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quest_peak/config/app_locale_extension.dart';
-import 'package:quest_peak/domain/entities/quest1.dart';
-import 'package:quest_peak/pages/home/widgets/quest_card.dart';
 
 import '../../domain/fetchers/quest_fetcher.dart';
 import '../../domain/models/quest_model.dart';
@@ -10,6 +8,7 @@ import '../../domain/models/settings_model.dart';
 import '../../domain/providers/settings_provider.dart';
 import '../../domain/providers/style_provider.dart';
 import '../../domain/trackers/quest_solved_tracker.dart';
+import '../home/widgets/quest.dart';
 
 class MainPage extends ConsumerStatefulWidget {
   const MainPage({super.key});
@@ -47,23 +46,16 @@ class _MainPage extends ConsumerState<MainPage> {
   }
 
   List<Widget> buildList(List<Quest> list) {
+    // TODO -
     List<Widget> list2 = [];
     for (int i = 0; i < list.length; i++) {
       list2.add(
-          // QuestWidget(
-          //   quest: list[i],
-          //   pageController: _pageController,
-          //   currentPage: i,
-          // ),
-          QuestCard(
-              quest: Quest1(
-                name: list[i].name,
-                description: list[i].description,
-                imagePath: list[i].imagePath,
-                places: [],
-              ),
-              pageController: _pageController,
-              currentPage: i));
+        QuestWidget(
+          quest: list[i],
+          pageController: _pageController,
+          currentPage: i,
+        ),
+      );
     }
     return list2;
   }

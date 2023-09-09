@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quest_peak/domain/models/quest_model.dart';
 import 'package:quest_peak/domain/providers/style_provider.dart';
 import 'package:quest_peak/pages/home/widgets/is_solved.dart';
-import 'package:quest_peak/pages/home/widgets/place_page.dart';
+import 'package:quest_peak/pages/place_page/place_page.dart';
 import 'package:quest_peak/pages/home/widgets/to_favorite_button.dart';
 // import 'package:quest_peak/config/styles.dart';
 
