@@ -1,28 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quest_peak/domain/models/quest_model.dart';
+import 'package:quest_peak/config/app_locale_extension.dart';
 import 'package:quest_peak/domain/providers/style_provider.dart';
-import 'package:quest_peak/pages/home/widgets/is_solved.dart';
-import 'package:quest_peak/pages/home/widgets/place_page.dart';
-import 'package:quest_peak/pages/home/widgets/to_favorite_button.dart';
-// import 'package:quest_peak/config/styles.dart';
+import 'package:quest_peak/pages/quest_page/quest_page.dart';
 
-// ignore: must_be_immutable
-class QuestWidget extends ConsumerWidget {
-  late Quest quest;
-  late PageController pageController;
-  late int currentPage;
+import '../../../domain/entities/quest1.dart';
 
-  QuestWidget(
-      {super.key,
-      required this.quest,
-      required this.pageController,
-      required this.currentPage});
+class QuestCard extends ConsumerWidget {
+  const QuestCard({
+    super.key,
+    required this.quest,
+    required this.pageController,
+    required this.currentPage,
+  });
 
-  // user will interact with a widget, thus Gesture detection is needed
-  // for this purposes InkWell is used since it  shows a visual indication
-  // that the touch was received, while in GestureDetector this should be implemented
+  final Quest1 quest;
+  final PageController pageController;
+  final int currentPage;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final screenHeight = MediaQuery.of(context).size.height;
@@ -37,7 +32,7 @@ class QuestWidget extends ConsumerWidget {
             transitionDuration: const Duration(milliseconds: 400),
             pageBuilder: (context, _, __) {
               // return QuestDetailsWidget(quest: quest);
-              return PlacePage(quest: quest);
+              return QuestPage(quest: quest);
             },
           ),
         );
@@ -68,14 +63,14 @@ class QuestWidget extends ConsumerWidget {
                   ),
                 ),
               ),
-              Align(
-                alignment: const Alignment(0.65, 0.7),
-                child: IsSolvedWidget(quest: quest),
-              ),
-              Align(
-                alignment: const Alignment(0.65, 0.95),
-                child: SaveToFavouritesWidget(quest: quest),
-              ),
+              // Align(
+              //   alignment: const Alignment(0.65, 0.7),
+              //   child: IsSolvedWidget(quest: quest),
+              // ),
+              // Align(
+              //   alignment: const Alignment(0.65, 0.95),
+              //   child: SaveToFavouritesWidget(quest: quest),
+              // ),
               Padding(
                 padding: const EdgeInsets.only(left: 58, right: 36, bottom: 16),
                 child: Column(
@@ -90,7 +85,7 @@ class QuestWidget extends ConsumerWidget {
                       ),
                     ),
                     Text(
-                      AppLocalizations.of(context)!.learnMore,
+                      context.locale.learnMore,
                       style: appTheme.subHeadingWhite(),
                     ),
                   ],

@@ -20,10 +20,13 @@ class QuestPage extends ConsumerWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: Align(
-        alignment: Alignment.bottomCenter,
-        child: QuestDescription(
-          quest: quest,
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Align(
+          alignment: Alignment.bottomCenter,
+          child: QuestDescription(
+            quest: quest,
+          ),
         ),
       ),
     );
@@ -67,7 +70,7 @@ class QuestDescription extends ConsumerWidget {
             ),
           ),
           const SizedBox(
-            height: 7,
+            height: 28,
           ),
           SizedBox(
             width: double.infinity,
