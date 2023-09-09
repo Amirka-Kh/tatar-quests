@@ -19,12 +19,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'config/firebase_options.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
   runZonedGuarded<Future<void>>(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
     FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
 
     await Hive.initFlutter();
