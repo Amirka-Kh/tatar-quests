@@ -5,6 +5,8 @@ abstract class AppTheme {
   TextStyle display2();
   TextStyle heading();
   TextStyle subHeading();
+  TextStyle headingWhite();
+  TextStyle subHeadingWhite();
 }
 
 class AppThemeDefault extends AppTheme {
@@ -39,6 +41,23 @@ class AppThemeDefault extends AppTheme {
         fontWeight: FontWeight.w500,
         inherit: true,
       );
+
+
+  @override
+  TextStyle headingWhite() => const TextStyle(
+    color: Colors.white,
+    fontSize: 34,
+    fontWeight: FontWeight.w900,
+    letterSpacing: 1.2,
+  );
+
+  @override
+  TextStyle subHeadingWhite() => const TextStyle(
+    color: Colors.white,
+    fontSize: 24,
+    fontWeight: FontWeight.w500,
+    inherit: true,
+  );
 }
 
 class AppThemeDark extends AppTheme {
@@ -73,6 +92,23 @@ class AppThemeDark extends AppTheme {
         fontWeight: FontWeight.w500,
         inherit: true,
       );
+
+
+  @override
+  TextStyle headingWhite() => const TextStyle(
+    color: Colors.white,
+    fontSize: 34,
+    fontWeight: FontWeight.w900,
+    letterSpacing: 1.2,
+  );
+
+  @override
+  TextStyle subHeadingWhite() => const TextStyle(
+    color: Colors.white,
+    fontSize: 24,
+    fontWeight: FontWeight.w500,
+    inherit: true,
+  );
 }
 
 class QuestCardClipper extends CustomClipper<Path> {

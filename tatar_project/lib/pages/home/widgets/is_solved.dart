@@ -26,8 +26,8 @@ class _IsSolvedWidget extends ConsumerState<IsSolvedWidget> {
             bool isFinished = snapshot.data!;
             return GestureDetector(
               child: Container(
-                  width: 50.0,
-                  height: 50.0,
+                  width: 45.0,
+                  height: 45.0,
                   decoration: const BoxDecoration(
                     color: Color.fromARGB(180, 255, 255, 255),
                     shape: BoxShape.circle,
@@ -36,7 +36,7 @@ class _IsSolvedWidget extends ConsumerState<IsSolvedWidget> {
                     isFinished
                         ? Icons.check_box
                         : Icons.check_box_outline_blank,
-                    size: 40,
+                    size: 35,
                     color: isFinished ? Colors.green : null,
                     semanticLabel: isFinished
                         ? AppLocalizations.of(context)!.isSolved
