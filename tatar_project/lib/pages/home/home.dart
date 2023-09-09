@@ -112,6 +112,7 @@ class _HomePage extends ConsumerState<HomePage> {
                       Expanded(
                           child: (snapshot.hasData)
                               ? (PageView(
+                                  controller: _pageController,
                                   physics: const ClampingScrollPhysics(),
                                   children: buildList(snapshot.data!),
                                 ))

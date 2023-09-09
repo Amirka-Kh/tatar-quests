@@ -49,6 +49,7 @@ flutter:
     - assets/quest/Castle.jpg
     - assets/quest/Pirate.jpg
     - assets/quest/Mayak.jpeg
+    - assets/icon/icon.png
   #   - assets/quest/Inscription.jpg
   #   - assets/quest/Light.jpg
   #   - assets/quest/Plate.jpg
