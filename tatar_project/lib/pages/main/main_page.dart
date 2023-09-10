@@ -105,7 +105,7 @@ class _MainPage extends ConsumerState<MainPage> {
                         ))
                       : (snapshot.hasError)
                           ? Text(
-                              context.locale.connectionError,
+                              '${context.locale.connectionError}\n${snapshot.error.toString()}',
                               style: appTheme.display2(),
                             )
                           : const Center(
