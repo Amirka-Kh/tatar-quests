@@ -46,6 +46,7 @@ class _MainPage extends ConsumerState<MainPage> {
   }
 
   List<Widget> buildList(List<Quest> list) {
+    // TODO -
     List<Widget> list2 = [];
     for (int i = 0; i < list.length; i++) {
       list2.add(
@@ -79,14 +80,14 @@ class _MainPage extends ConsumerState<MainPage> {
                       style: appTheme.display1(),
                       children: [
                         TextSpan(
-                          text: context.locale.innopolisSecrets1,
+                          text: 'Tatar',
                           style: appTheme.display1().copyWith(
                                 color: Colors.white,
                               ),
                         ),
                         const TextSpan(text: "\n"),
                         TextSpan(
-                          text: context.locale.innopolisSecrets2,
+                          text: 'Quest',
                           style: appTheme.display2().copyWith(
                                 color: Colors.white,
                               ),
@@ -104,7 +105,7 @@ class _MainPage extends ConsumerState<MainPage> {
                         ))
                       : (snapshot.hasError)
                           ? Text(
-                              context.locale.connectionError,
+                              '${context.locale.connectionError}\n${snapshot.error.toString()}',
                               style: appTheme.display2(),
                             )
                           : const Center(
